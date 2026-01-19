@@ -34,7 +34,7 @@ export default function Tasks() {
   const [taskForm, setTaskForm] = useState<{ title: string; description: string; status: Status }>({ title: "", description: "", status: "TODO" });
   const [editTaskId, setEditTaskId] = useState<number | null>(null);
   const [deleteId, setDeleteId] = useState<number | null>(null);
-
+  // console.log(search);
   const filteredTasks = tasks.filter((task) =>
     task.title.toLowerCase().includes(search.toLowerCase()) ||
     task.description.toLowerCase().includes(search.toLowerCase())
