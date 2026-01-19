@@ -2,9 +2,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 import ThemeProvider from "../components/ThemeProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ClientLayoutShell from "../components/ClientLayoutShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +23,7 @@ export const metadata: Metadata = {
   description: "A professional task manager built with Next.js, Tailwind CSS, and shadcn/ui.",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,9 +33,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
+          <ClientLayoutShell>
+            {children}
+          </ClientLayoutShell>
         </ThemeProvider>
       </body>
     </html>
