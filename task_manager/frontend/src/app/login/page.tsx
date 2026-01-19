@@ -24,9 +24,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-100 to-white dark:from-gray-900 dark:to-gray-800 relative">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-primary/5 via-white to-zinc-100 dark:from-zinc-900 dark:via-black dark:to-zinc-950 relative">
       <button
-        className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-white/90 dark:bg-gray-900/90 border border-indigo-200 dark:border-gray-700 rounded-full shadow hover:bg-indigo-50 dark:hover:bg-gray-800 text-indigo-700 dark:text-indigo-200 font-semibold transition-all duration-150 z-10"
+        className="absolute top-6 left-6 flex items-center gap-2 px-4 py-2 bg-primary text-white dark:text-zinc-900 font-semibold rounded-full shadow-lg hover:bg-primary/90 transition-all duration-150 z-10 border-none"
         onClick={() => router.push("/")}
         aria-label="Go to Home"
       >
@@ -35,10 +35,10 @@ export default function LoginPage() {
         </svg>
         Home
       </button>
-      <div className="w-full max-w-md bg-white/90 dark:bg-gray-900/90 rounded-xl shadow-lg p-8 flex flex-col items-center">
-        <FaSignInAlt className="mb-4 text-indigo-600 dark:text-indigo-300" size={64} />
-        <h1 className="text-3xl font-bold mb-2 text-indigo-700 dark:text-indigo-300">Sign In</h1>
-        <p className="mb-6 text-gray-500 dark:text-gray-400">Welcome back! Please login to your account.</p>
+      <div className="w-full max-w-md bg-white/95 dark:bg-zinc-900/95 rounded-xl shadow-lg p-8 flex flex-col items-center">
+        <FaSignInAlt className="mb-4 text-primary" size={64} />
+        <h1 className="text-3xl font-bold mb-2 text-primary">Sign In</h1>
+        <p className="mb-6 text-zinc-600 dark:text-zinc-300">Welcome back! Please login to your account.</p>
         <button
           type="button"
           className="w-full flex items-center justify-center gap-2 py-2 mb-6 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition font-medium shadow-sm"
@@ -58,7 +58,7 @@ export default function LoginPage() {
             <input
               id="email"
               type="email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
+              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-primary"
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
@@ -69,17 +69,17 @@ export default function LoginPage() {
             <input
               id="password"
               type="password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
+              className="w-full px-4 py-2 border border-zinc-300 dark:border-zinc-700 rounded-lg bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-primary"
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
             />
           </div>
           {error && <div className="mb-2 text-red-500 text-sm">{error}</div>}
-          <button type="submit" className="w-full py-2 mt-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition">Login</button>
+          <button type="submit" className="w-full py-2 mt-2 bg-primary hover:bg-primary/90 text-white dark:text-zinc-900 font-semibold rounded-lg shadow transition">Login</button>
         </form>
         <div className="mt-6 text-center">
-          <span className="text-gray-600 dark:text-gray-300">Don't have an account?</span>
+          <span className="text-gray-600 dark:text-gray-300">Don&apos;t have an account?</span>
           <button
             className="ml-2 text-indigo-600 hover:underline dark:text-indigo-400 font-medium"
             onClick={() => router.push("/register")}
