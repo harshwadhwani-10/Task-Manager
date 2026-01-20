@@ -1,0 +1,15 @@
+// This is a minimal Prisma schema for NeonDB
+// Update the provider and url as needed
+
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Task {
+  id    Int    @id @default(autoincrement())
+  name  String
+}
